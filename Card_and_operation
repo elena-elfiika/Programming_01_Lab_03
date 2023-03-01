@@ -1,0 +1,65 @@
+public class Cards{
+
+    // Card id
+    int kva_id;
+    // Next card id. -1 for this: -1 + 1 = 0. First card id is 0.
+    int next_id = -1;
+
+    // Card output
+	public void printCard() {
+		String result = "";
+		switch (kva_id / 4) {
+			case 0:
+				result += "6";
+				break;
+			case 1:
+				result += "7";
+				break;
+			case 2:
+				result += "8";
+				break;
+			case 3:
+				result += "9";
+				break;
+			case 4:
+				result += "10";
+				break;
+			case 5:
+				result += "J";
+				break;
+			case 6:
+				result += "Q";
+				break;
+			case 7:
+				result += "K";
+				break;
+			case 8:
+				result += "A";
+				break;
+			default:
+				result += "ERROR";
+				break;
+		}
+		switch (kva_id % 4) {
+			case 0:
+				result += "♥";
+				break;
+			case 1:
+				result += "♦";
+				break;
+			case 2:
+				result += "♣";
+				break;
+			case 3:
+				result += "♠";
+				break;
+			default:
+				result += "ERROR";
+				break;
+		}
+		System.out.print(result + " ");
+	}
+    
+        
+    }
+}
