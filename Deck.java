@@ -43,7 +43,7 @@ public class Deck{
 
     // Раздача карт
     public void destribute(Player p_1, Player p_2){
-        for(int kva = 0; kva < quantity - 2; kva += 2){
+        for(int kva = 0; kva < 34; kva += 2){
             cards[kva].setNext(kva);
             cards[kva+1].setNext(kva+1);
             p_1.givecard(cards[kva]);

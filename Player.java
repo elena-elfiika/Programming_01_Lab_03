@@ -6,8 +6,10 @@ public class Player {
     public void givecard(Card meow){
 		if(index == -1){
 			index = meow.getNext();
+		}else{
+			p_cards[index].setNext(index+2);
 		}
-		p_cards[index].setNext(index);
+		meow.setNext(-1);
 	}
 
     public void print_player() {
