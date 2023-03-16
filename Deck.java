@@ -36,17 +36,21 @@ public class Deck{
         }
     }
 
-    // Раздача карт
-    public void destribute(Player p_1, Player p_2){
-        for(int kva = 0; kva < quantity; kva += 2){
-            p_1.givecard(cards[kva]);
-            p_2.givecard(cards[kva+1]);
-        }
-    }
-
     // Инкапсуляция
     public static Card[] getCards(){
         return cards;
+    }
+
+    // Раздача карт
+    public void destribute(Player p_1, Player p_2){
+        for(int kva = 0; kva < quantity - 2; kva += 2){
+            cards[kva].setNext(kva);
+            cards[kva+1].setNext(kva+1);
+            p_1.givecard(cards[kva]);
+            p_2.givecard(cards[kva+1]);
+            
+                      
+        }
     }
     
 }
