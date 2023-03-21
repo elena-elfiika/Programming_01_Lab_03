@@ -7,9 +7,13 @@ public class Player {
 		if(index == -1){
 			index = meow.getNext();
 		}
-		for(int o = 0; o < 33; o += 1){
-			if(index < 32)p_cards[index+o].setNext(index+2+o);
+		
+		if (index < 32){
+			for(int o = 0; o < 33; o += 1){
+				p_cards[index+o].setNext(index+2+o);
+			}
 		}
+		
 		meow.setNext(-1);
 	}
 
