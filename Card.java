@@ -7,6 +7,11 @@ public class Card {
         this.card = x;
     }
     
+    // Вывод индекса для отладки
+    public void printindex(){
+        System.out.print(index + " ");
+    }
+
     // Инкапсуляция из-за неизменяемости, для взаимодействия с картами
     public int getNext(){
         return index;
