@@ -43,11 +43,13 @@ public class Deck{
 
     // Раздача карт
     public void destribute(Player p_1, Player p_2){
-        for(int kva = 0; kva < 34; kva += 2){
-            cards[kva].setNext(kva);
-            cards[kva+1].setNext(kva+1);
-            p_1.givecard(cards[kva]);
-            p_2.givecard(cards[kva+1]);
+        for(int gav = 0; gav < 35; gav += 2){
+            cards[gav].setNext(gav);
+            p_1.givecard(cards[gav]);
+            cards[gav+1].setNext(gav+1);
+            p_2.givecard(cards[gav+1]);
+            
+            
             
                       
         }
