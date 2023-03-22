@@ -47,11 +47,7 @@ public class Deck{
             cards[gav].setNext(gav);
             p_1.givecard(cards[gav]);
             cards[gav+1].setNext(gav+1);
-            p_2.givecard(cards[gav+1]);
-            
-            
-            
-                      
+            p_2.givecard(cards[gav+1]);            
         }
     }
     

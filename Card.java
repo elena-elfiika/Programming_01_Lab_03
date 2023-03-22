@@ -13,12 +13,14 @@ public class Card {
     }
 
     // Инкапсуляция из-за неизменяемости, для взаимодействия с картами
-    public int getNext(){
-        return index;
-    }
     public int getCard(){
         return card;
     }
+   
+    public int getNext(){
+        return index;
+    }
+    
     public void setNext(int y){
         this.index = y;
     }

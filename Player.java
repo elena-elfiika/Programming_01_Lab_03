@@ -8,6 +8,8 @@ public class Player {
 			index = meow.getNext();
 		}
 		
+		// p_cards[index].setNext(index+2);
+		
 		if (index < 32){
 			for(int o = 0; o < 33; o += 1){
 				p_cards[index+o].setNext(index+2+o);
