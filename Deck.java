@@ -20,6 +20,7 @@ public class Deck{
             card.printCard();
         }
         System.out.println();
+        System.out.println();
     }
 
     // Перемешивание колоды
@@ -32,7 +33,6 @@ public class Deck{
             temp = cards[kva];
             cards[kva] = cards[r_p];
             cards[r_p] = temp;
-
         }
     }
 
@@ -43,12 +43,18 @@ public class Deck{
 
     // Раздача карт
     public void destribute(Player p_1, Player p_2){
+        System.out.println("Игрок 1");
         for(int gav = 0; gav < 35; gav += 2){
             cards[gav].setNext(gav);
             p_1.givecard(cards[gav]);
-            cards[gav+1].setNext(gav+1);
-            p_2.givecard(cards[gav+1]);            
         }
+        System.out.println();
+        System.out.println();
+        System.out.println("Игрок 2");
+        for(int gav = 1; gav < 36; gav += 2){
+            cards[gav].setNext(gav);
+            p_2.givecard(cards[gav]);
+        }
+        System.out.println();
     }
-    
 }

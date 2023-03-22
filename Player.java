@@ -4,30 +4,22 @@ public class Player {
 
     // ТУТ БЫЛА ОШИБКА. НЕ РАБОТАЕТ. Где-то на стыке раздачи и получения нового индекса
     public void givecard(Card meow){
+		int x = index;
+		Card tmp = meow;
+		
 		if(index == -1){
 			index = meow.getNext();
 		}
 		
-		// p_cards[index].setNext(index+2);
-		
-		if (index < 32){
-			for(int o = 0; o < 33; o += 1){
-				p_cards[index+o].setNext(index+2+o);
-			}
-		}
-		
-		meow.setNext(-1);
-	}
-
-    public void print_player() {
-        int x = index;
-		Card tmp;
-		while (x != -1){
+		while(x != -1){
 			tmp = p_cards[x];
 			x = tmp.getNext();
-			tmp.printCard();
-			// отладочное tmp.printindex();
 		}
-        System.out.println();
-    }
+		p_cards[index] = tmp;
+
+		meow.printCard();
+		// Отладочный вывод индекса
+		// meow.printindex();
+		meow.setNext(-1);
+	}
 }

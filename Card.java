@@ -24,7 +24,8 @@ public class Card {
     public void setNext(int y){
         this.index = y;
     }
-    // Присвоене масти и номинала для вывода и вывод
+
+    // Присвоение масти и номинала для вывода и вывод
     public void printCard() {
         String result = "";
         switch (card / 4) {
