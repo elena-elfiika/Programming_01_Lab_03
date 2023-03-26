@@ -26,13 +26,11 @@ public class Lab_03_Main {
         System.out.println("Раздача");
         gamedeck.destribute(player_1, player_2);
 
-        // System.out.println("P1");
-        // player_1.print();
-        // System.out.println();
+        System.out.println("\nИгрок 2:");
+        player_1.print();
+        System.out.println();
 
         System.out.println("\nИгрок 2:");
-        player_2.test_print();
-        System.out.println();
         player_2.print();
         System.out.println();
     }

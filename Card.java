@@ -1,7 +1,7 @@
 public class Card {
     // Карта состоит из своего индекса и индекса следующей
     private final int card;
-    private int index;
+    private int index = -1;
 
     public Card(int x){
         this.card = x;

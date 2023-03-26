@@ -12,12 +12,12 @@ public class Deck{
         cards = new Card[quantity];
         for(int kva = 0; kva < quantity; kva += 1){
             cards[kva] = new Card(kva);
-            if (kva == quantity-1){
-                i = -1;
-            } else {
-                i = kva+1;
-            }
-            cards[kva].setNext(i);
+            // if (kva == quantity-1){
+            //     i = -1;
+            // } else {
+            //     i = kva+1;
+            // }
+            // cards[kva].setNext(i);
         }
     }
 
@@ -41,12 +41,12 @@ public class Deck{
             r_p = rand.nextInt(36);
             temp = cards[kva];
             cards[kva] = cards[r_p];
-            tmp_i = cards[r_p].getNext();
-            if (kva == quantity - 1) i = -1;
-            if (kva < quantity - 1) i = kva+1;
-            cards[kva].setNext(i);
+            // tmp_i = cards[r_p].getNext();
+            // if (kva == quantity - 1) i = -1;
+            // if (kva < quantity - 1) i = kva+1;
+            // cards[kva].setNext(i);
             cards[r_p] = temp;
-            cards[r_p].setNext(tmp_i);
+            // cards[r_p].setNext(tmp_i);
         }
     }
 
@@ -60,12 +60,9 @@ public class Deck{
         
         for(int gav = 0; gav < 35; gav += 2){
             cards[gav].setNext(gav);
+            cards[gav+1].setNext(gav+1);
             p_1.givecard(cards[gav]);
-        }
-
-        for(int gav = 1; gav < 36; gav += 2){
-            cards[gav].setNext(gav);
-            p_2.givecard(cards[gav]);
+            p_2.givecard(cards[gav+1]);
         }
         System.out.println();
     }
