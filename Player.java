@@ -30,9 +30,11 @@ public class Player {
 			tmp = p_cards[x];
 			x = tmp.getNext();
 			// tmp.printCard();
-			// отладочное tmp.printindex();
-			p_cards[index] = tmp;
+			// отладочное
+			// tmp.printindex();
 		}
+
+		p_cards[index] = tmp;
 
  		// Отладочный вывод карты и индекса
 		// meow.printCard();

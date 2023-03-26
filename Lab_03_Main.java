@@ -6,14 +6,14 @@ public class Lab_03_Main {
         Deck gamedeck = new Deck();
 
         // Печать колоды
-        System.out.println("Колода");
+        System.out.println("\nКолода");
         gamedeck.PrintDeck();
 
         // Перемешивание карт
         gamedeck.Shuffle();
 
         // Печать перемешанной колоды
-        System.out.println("Перемешанная колода");
+        System.out.println("\nПеремешанная колода");
         gamedeck.PrintDeck();
 
         // Игрок 1
@@ -23,10 +23,10 @@ public class Lab_03_Main {
         Player player_2 = new Player();
         
         // Раздача карт игрокам
-        System.out.println("Раздача");
+        System.out.println("\nРаздача");
         gamedeck.destribute(player_1, player_2);
 
-        System.out.println("\nИгрок 2:");
+        System.out.println("\nИгрок 1:");
         player_1.print();
         System.out.println();
 
