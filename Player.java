@@ -33,4 +33,14 @@ public class Player {
 	// 		card.printCard();
 	// 	}
 	// }
+
+	public void print(){
+		int curr = index;
+		Card tmp;
+		do{
+			tmp = p_cards[curr];
+			curr = tmp.getNext();
+			tmp.printCard();
+		}while(curr!=-1);
+	}
 }

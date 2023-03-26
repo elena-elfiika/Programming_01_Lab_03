@@ -24,6 +24,8 @@ public class Lab_03_Main {
         
         // Раздача карт игрокам
         gamedeck.destribute(player_1, player_2);
+
+        // player_1.print();
         System.out.println();
     }
 }
