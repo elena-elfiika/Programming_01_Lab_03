@@ -26,7 +26,7 @@ public class Deck{
         for(Card card : cards){
             card.printCard();
             // Отладочный вывод индекса
-            // card.printNextIndex();
+            card.printNextIndex();
         }
         System.out.println();
         System.out.println();
@@ -59,10 +59,13 @@ public class Deck{
     public void destribute(Player p_1, Player p_2){
         
         for(int gav = 0; gav < 35; gav += 2){
-            
+            cards[gav].setNext(gav);
             p_1.givecard(cards[gav]);
+        }
 
-            p_2.givecard(cards[gav+1]);
+        for(int gav = 1; gav < 36; gav += 2){
+            cards[gav].setNext(gav);
+            p_2.givecard(cards[gav]);
         }
         System.out.println();
     }

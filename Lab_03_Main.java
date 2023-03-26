@@ -23,14 +23,17 @@ public class Lab_03_Main {
         Player player_2 = new Player();
         
         // Раздача карт игрокам
+        System.out.println("Раздача");
         gamedeck.destribute(player_1, player_2);
 
-        System.out.println("P1");
-        player_1.print();
-        System.out.println();
+        // System.out.println("P1");
+        // player_1.print();
+        // System.out.println();
 
-        System.out.println("P2");
-        player_1.print();
+        System.out.println("\nИгрок 2:");
+        player_2.test_print();
+        System.out.println();
+        player_2.print();
         System.out.println();
     }
 }
