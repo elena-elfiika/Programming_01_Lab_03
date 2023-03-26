@@ -1,8 +1,12 @@
 public class Player {
-    private Card[] p_cards = Deck.getCards();
+    private Card[] p_cards;
     private int index = -1;
 
-    // ТУТ БЫЛА ОШИБКА. НЕ РАБОТАЕТ. Где-то на стыке раздачи и получения нового индекса
+    public Player(){
+        p_cards = Deck.getCards();
+    }
+
+	// ТУТ БЫЛА ОШИБКА. НЕ РАБОТАЕТ. Где-то на стыке раздачи и получения нового индекса
     public void givecard(Card meow){
 		int x = index;
 		Card tmp = meow;
@@ -22,4 +26,11 @@ public class Player {
 		// meow.printindex();
 		meow.setNext(-1);
 	}
+
+	// public void test_print(Player p_t) {
+	// 	for(Card card : p_cards){
+	// 		card.printindex();
+	// 		card.printCard();
+	// 	}
+	// }
 }

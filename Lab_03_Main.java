@@ -18,7 +18,7 @@ public class Lab_03_Main {
 
         // Игрок 1
         Player player_1 = new Player();
-        
+
         // Игрок 2
         Player player_2 = new Player();
         
