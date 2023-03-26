@@ -1,6 +1,6 @@
 public class Player {
     private Card[] p_cards;
-    private int index = -1;
+	int index = -1;
 
     public Player(){
         p_cards = Deck.getCards();
@@ -8,39 +8,25 @@ public class Player {
 
 	// ТУТ БЫЛА ОШИБКА. НЕ РАБОТАЕТ. Где-то на стыке раздачи и получения нового индекса
     public void givecard(Card meow){
-		int x = index;
-		Card tmp = meow;
-		
-		if(index == -1){
-			index = meow.getNext();
-		}
-		
-		while(x != -1){
-			tmp = p_cards[x];
-			x = tmp.getNext();
-		}
-		p_cards[index] = tmp;
-
 		meow.printCard();
-		// Отладочный вывод индекса
-		// meow.printindex();
-		meow.setNext(-1);
+		meow.printNextIndex();
 	}
 
-	// public void test_print(Player p_t) {
-	// 	for(Card card : p_cards){
-	// 		card.printindex();
-	// 		card.printCard();
-	// 	}
-	// }
+	public void test_print() {
+		for(Card card : p_cards){
+			card.printCard();
+			card.printNextIndex();
+		}
+	}
 
 	public void print(){
-		int curr = index;
+		int x = 0;
 		Card tmp;
-		do{
-			tmp = p_cards[curr];
-			curr = tmp.getNext();
+		while(x != -1){
+			tmp = p_cards[x];
 			tmp.printCard();
-		}while(curr!=-1);
+			x = tmp.getNext();
+		}
+		System.out.println();
 	}
 }

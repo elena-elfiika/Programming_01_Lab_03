@@ -1,14 +1,14 @@
 public class Card {
     // Карта состоит из своего индекса и индекса следующей
     private final int card;
-    private int index = -1;
+    private int index;
 
     public Card(int x){
         this.card = x;
     }
     
     // Вывод индекса для отладки
-    public void printindex(){
+    public void printNextIndex(){
         System.out.print(index + " ");
     }
 

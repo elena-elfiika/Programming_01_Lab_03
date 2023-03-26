@@ -8,9 +8,16 @@ public class Deck{
 
     // Создание колоды
     public Deck(){
+        int i = -1;
         cards = new Card[quantity];
         for(int kva = 0; kva < quantity; kva += 1){
             cards[kva] = new Card(kva);
+            if (kva == quantity-1){
+                i = -1;
+            } else {
+                i = kva+1;
+            }
+            cards[kva].setNext(i);
         }
     }
 
@@ -18,6 +25,8 @@ public class Deck{
     public void PrintDeck(){
         for(Card card : cards){
             card.printCard();
+            // Отладочный вывод индекса
+            // card.printNextIndex();
         }
         System.out.println();
         System.out.println();
@@ -26,13 +35,18 @@ public class Deck{
     // Перемешивание колоды
     public void Shuffle(){
         Random rand = new Random();
-        int r_p;
+        int r_p, i = -1, tmp_i = -1;
         Card temp;
         for (int kva = 0; kva < quantity; kva += 1){
             r_p = rand.nextInt(36);
             temp = cards[kva];
             cards[kva] = cards[r_p];
+            tmp_i = cards[r_p].getNext();
+            if (kva == quantity - 1) i = -1;
+            if (kva < quantity - 1) i = kva+1;
+            cards[kva].setNext(i);
             cards[r_p] = temp;
+            cards[r_p].setNext(tmp_i);
         }
     }
 
@@ -43,17 +57,12 @@ public class Deck{
 
     // Раздача карт
     public void destribute(Player p_1, Player p_2){
-        System.out.println("Игрок 1");
+        
         for(int gav = 0; gav < 35; gav += 2){
-            cards[gav].setNext(gav);
+            
             p_1.givecard(cards[gav]);
-        }
-        System.out.println();
-        System.out.println();
-        System.out.println("Игрок 2");
-        for(int gav = 1; gav < 36; gav += 2){
-            cards[gav].setNext(gav);
-            p_2.givecard(cards[gav]);
+
+            p_2.givecard(cards[gav+1]);
         }
         System.out.println();
     }
