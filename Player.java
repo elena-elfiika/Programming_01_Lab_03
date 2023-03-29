@@ -19,6 +19,7 @@ public class Player {
 			tmp = p_cards[i];
 			next = tmp.getNext();
 		}
+
 		tmp.setNext(o);
 	}
 
@@ -26,7 +27,6 @@ public class Player {
 		System.out.println("\nТестовая печать всего массива");
 		for(Card card : p_cards){
 			card.printCard();
-			card.printNextIndex();
 		}
 	}
 
