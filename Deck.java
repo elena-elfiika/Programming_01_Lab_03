@@ -40,6 +40,7 @@ public class Deck{
     // Инкапсуляция
     public static Card[] getCards(){
         //ВЖУХ BСЁ ЗАРАБОТАЛО
+        //Статик для принадлежности классу, а не объекту. Из-за реализации игрока.
         return (new Deck()).cards;
     }
 
